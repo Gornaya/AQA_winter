@@ -41,7 +41,7 @@ public class Cupcakes extends Products {
 
     @Override
     public void order() {
-        System.out.println(getNomination() + "size " + getQuantityInPack() + "is added to order");
+        System.out.println(getNomination() + " " + getCategory() + " " + getQuantityInPack() + " pcs " + "is added to the order");
     }
 
     @Override

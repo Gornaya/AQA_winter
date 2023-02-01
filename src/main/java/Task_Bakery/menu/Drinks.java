@@ -51,7 +51,7 @@ public class Drinks extends Products {
 
     @Override
     public void order() {
-        System.out.println(getNomination() + getFlavor() + "size " + getSize() + "is added to order");
+        System.out.println(getNomination() + " " + getFlavor() + " " + getProductsName() + " " + getSize() + " size " + "is added to the order");
     }
 
     @Override

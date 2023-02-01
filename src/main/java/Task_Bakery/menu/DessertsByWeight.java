@@ -10,11 +10,13 @@ public class DessertsByWeight extends Products implements ProductWeight {
     private boolean service;
     private double priceForGr;
 
-    public DessertsByWeight(String productsName, String category, int price, String dueDate, String nomination, double weight, boolean service) {
+    public DessertsByWeight(String productsName, String category, int price, String dueDate,
+                            String nomination, double weight, boolean service, double priceForGr) {
         super(productsName, category, price, dueDate);
         this.nomination = nomination;
         this.weight = weight;
         this.service = service;
+        this.priceForGr = priceForGr;
     }
 
     public String getNomination() {
@@ -41,9 +43,17 @@ public class DessertsByWeight extends Products implements ProductWeight {
         this.service = service;
     }
 
+    public double getPriceForGr() {
+        return priceForGr;
+    }
+
+    public void setPriceForGr(double priceForGr) {
+        this.priceForGr = priceForGr;
+    }
+
     @Override
     public void order() {
-        System.out.println(getNomination() + "weight: " + getWeight() + "is added to order");
+        System.out.println(getNomination() + " weight: " + getWeight() + " gr" + " is added to the order");
     }
 
     @Override
@@ -63,6 +73,6 @@ public class DessertsByWeight extends Products implements ProductWeight {
 
     @Override
     public void setPriceAfterWeight(int gr) {
-        setPrice((int) (priceForGr * gr));
+        setPrice ((int) (priceForGr * gr));
     }
 }
