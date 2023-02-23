@@ -26,9 +26,9 @@ public class Main {
         System.out.println();
         ProductMarket.sortByAlpha(list).forEach(System.out::println);
         System.out.println();
-        ProductMarket.sortMoreThan(list);
+        ProductMarket.sortMoreThan(list).forEach(System.out::println);
         System.out.println();
-        ProductMarket.sortLessThan(list);
+        ProductMarket.sortLessThan(list).forEach(System.out::println);
         System.out.println();
         System.out.println(ProductMarket.priceToString(list));
 

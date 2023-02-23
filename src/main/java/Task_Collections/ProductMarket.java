@@ -3,36 +3,49 @@ package Task_Collections;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Comparator.comparing;
+
 public class ProductMarket {
 
-    public static List<Product> unsortedList(List<Product> products) {
-        System.out.println("Unsorted list: ");
-        return products;
+    public static List<String> unsortedList(List<Product> products) {
+        List<String> unsorted = new ArrayList<>();
+        System.out.println("List of products: ");
+        for (Product product : products) {
+            unsorted.add(product.getName());
+        }
+        return unsorted;
     }
 
-    public static List<Product> sortByAlpha(List<Product> products) {
-        List<Product> sorted = new ArrayList<>(products);
-        Collections.sort(sorted, Comparator.comparing(Product::getName));
+    public static List<String> sortByAlpha(List<Product> products) {
+        List<String> list = new ArrayList<>();
         System.out.println("Sorted list by alphabet: ");
-        return sorted;
+        for (Product product : products) {
+            list.add(product.getName());
+        }
+        Collections.sort(list);
+        return list;
     }
 
-    public static List<Product> sortMoreThan(List<Product> products) {
-        List<Product> sorted = new ArrayList<>(products);
+    public static List<Integer> sortMoreThan(List<Product> products) {
+        List<Integer> price = new ArrayList<>();
         System.out.println("Price more then 10: ");
-        sorted.stream()
-                .filter(product -> product.getPrice() >= 10)
-                .forEach(System.out::println);
-        return sorted;
+        for (Product product : products) {
+            if (product.getPrice() > 10) {
+                price.add(product.getPrice());
+            }
+        }
+        return price;
     }
 
-    public static List<Product> sortLessThan(List<Product> products) {
-        List<Product> sorted = new ArrayList<>(products);
+    public static List<Integer> sortLessThan(List<Product> products) {
+        List<Integer> price = new ArrayList<>();
         System.out.println("Price less than 0: ");
-        sorted.stream()
-                .filter(product -> product.getPrice() < 0)
-                .forEach(System.out::println);
-        return sorted;
+        for (Product product : products) {
+            if (product.getPrice() < 0) {
+                price.add(product.getPrice());
+            }
+        }
+        return price;
     }
 
 
